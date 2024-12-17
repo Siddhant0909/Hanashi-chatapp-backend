@@ -3,7 +3,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import "dotenv/config";
 import userRoutes from "./routes/user.route.js";
-import messageRoutes from "./routes/message.route.js";
+import messageRoutes from "./routes/messages.route.js";
 import { connectDb } from "./lib/db.js";
 
 const app = express();
@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
   res.json({ message: "hello world" });
 });
 app.use("/api/user", userRoutes);
-app.use("/api/message", messageRoutes);
+app.use("/api/messages", messageRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server started at http://localhost:${PORT}`);

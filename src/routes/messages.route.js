@@ -2,7 +2,7 @@ import express from "express";
 import {
   getUsersForSidebar,
   sendMessage,
-} from "../controllers/message.controller.js";
+} from "../controllers/messages.controller.js";
 import { protectRoute } from "../middlewares/protectRoute.js";
 const router = express.Router();
 
