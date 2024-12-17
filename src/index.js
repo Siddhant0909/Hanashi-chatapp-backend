@@ -5,8 +5,7 @@ import "dotenv/config";
 import userRoutes from "./routes/user.route.js";
 import messageRoutes from "./routes/messages.route.js";
 import { connectDb } from "./lib/db.js";
-
-const app = express();
+import { app, server } from "./lib/socket.js";
 const PORT = process.env.PORT || 3000;
 
 app.use(
@@ -27,7 +26,7 @@ app.get("/", (req, res) => {
 app.use("/api/user", userRoutes);
 app.use("/api/messages", messageRoutes);
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`Server started at http://localhost:${PORT}`);
   connectDb();
 });
