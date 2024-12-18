@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173", process.env.CLIENT_URL],
     credentials: true,
   })
 );
@@ -27,6 +27,6 @@ app.use("/api/user", userRoutes);
 app.use("/api/messages", messageRoutes);
 
 server.listen(PORT, () => {
-  console.log(`Server started at http://localhost:${PORT}`);
+  console.log(`Server started at port ${PORT}`);
   connectDb();
 });
