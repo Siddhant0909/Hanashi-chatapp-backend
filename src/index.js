@@ -8,6 +8,8 @@ import { connectDb } from "./lib/db.js";
 import { app, server } from "./lib/socket.js";
 const PORT = process.env.PORT || 3000;
 
+// middlewares
+
 app.use(
   cors({
     origin: ["http://localhost:5173", process.env.CLIENT_URL],
